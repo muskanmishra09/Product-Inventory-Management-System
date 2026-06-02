@@ -1,8 +1,8 @@
-from backend.data_access.producers import get_all_producers, get_producer_by_id, add_producer, delete_producer, update_producer
-from backend.models.producers import Producer
+from data_access.producers import get_all_producers, get_producer_by_id, add_producer, delete_producer, update_producer
+from models.producers import Producer
 from psycopg2.extras import RealDictCursor
-from backend.logic.validations.producers_verification import is_valid_producer
-from backend.logic.validations.id_verification import check_id
+from logic.validations.producers_verification import is_valid_producer
+from logic.validations.id_verification import check_id
 
 
 def get_all_producers_data() -> list[RealDictCursor]:

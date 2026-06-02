@@ -1,9 +1,9 @@
-from backend.data_access.products import get_all_products, get_product_by_id, add_product, delete_product, update_product, set_stock, update_multiple_price_by_producer, update_multiple_price_by_category, update_all_price, update_multiple_price_by_producer_category, get_product_by_filter
-from backend.models.products import Product
-from backend.models.product_query import ProductQuery
+from data_access.products import get_all_products, get_product_by_id, add_product, delete_product, update_product, set_stock, update_multiple_price_by_producer, update_multiple_price_by_category, update_all_price, update_multiple_price_by_producer_category, get_product_by_filter
+from models.products import Product
+from models.product_query import ProductQuery
 from psycopg2.extras import RealDictCursor
-from backend.logic.validations.product_verification import is_valid_product
-from backend.logic.validations.id_verification import check_id
+from logic.validations.product_verification import is_valid_product
+from logic.validations.id_verification import check_id
 
 
 def get_all_products_data() -> list[RealDictCursor]:

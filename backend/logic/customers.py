@@ -1,4 +1,4 @@
-from backend.data_access.customers import (
+from data_access.customers import (
     get_all_customers,
     get_customer_by_id,
     add_customer,

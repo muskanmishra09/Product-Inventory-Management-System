@@ -1,7 +1,7 @@
-from backend.data_access.categories import get_all_categories, get_category_by_id, add_category, delete_category, update_category
-from backend.models.categories import Category
-from backend.logic.validations.category_verification import is_valid_category
-from backend.logic.validations.id_verification import check_id
+from data_access.categories import get_all_categories, get_category_by_id, add_category, delete_category, update_category
+from models.categories import Category
+from logic.validations.category_verification import is_valid_category
+from logic.validations.id_verification import check_id
 from psycopg2.extras import RealDictCursor
 
 

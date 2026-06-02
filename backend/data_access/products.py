@@ -1,7 +1,7 @@
 from psycopg2.extras import RealDictCursor
 from database.decorators import query_function
-from backend.models.products import Product
-from backend.data_access.utils.update_check import was_id_updated
+from models.products import Product
+from data_access.utils.update_check import was_id_updated
 
 
 @query_function

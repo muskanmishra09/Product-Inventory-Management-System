@@ -1,16 +1,16 @@
 from fastapi.routing import APIRouter
 
-from backend.apis.utils.data_response import data_response
-from backend.apis.utils.status_response import status_response
+from apis.utils.data_response import data_response
+from apis.utils.status_response import status_response
 
-from backend.logic.orders import (
+from logic.orders import (
     get_all_orders_data,
     get_order_data_by_id,
     create_new_order,
     delete_order_data
 )
 
-from backend.models.orders import Order
+from models.orders import Order
 
 
 router = APIRouter()

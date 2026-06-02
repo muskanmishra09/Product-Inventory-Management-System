@@ -1,7 +1,7 @@
 from fastapi import Body
 from fastapi.routing import APIRouter
-from backend.apis.utils.status_response import status_response
-from backend.logic.products import update_stock_data, add_stock_data
+from apis.utils.status_response import status_response
+from logic.products import update_stock_data, add_stock_data
 
 router = APIRouter()
 

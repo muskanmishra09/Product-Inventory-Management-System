@@ -1,4 +1,4 @@
-from backend.models.products import Product
+from models.products import Product
 
 
 def is_valid_product(product: Product):

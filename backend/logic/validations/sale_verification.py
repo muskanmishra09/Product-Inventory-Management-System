@@ -1,4 +1,4 @@
-from backend.models.sales import Sale
+from models.sales import Sale
 
 
 def is_valid_sale(sale: Sale):

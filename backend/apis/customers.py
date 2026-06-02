@@ -1,9 +1,9 @@
 from fastapi.routing import APIRouter
 
-from backend.apis.utils.data_response import data_response
-from backend.apis.utils.status_response import status_response
+from apis.utils.data_response import data_response
+from apis.utils.status_response import status_response
 
-from backend.logic.customers import (
+from logic.customers import (
     get_all_customers_data,
     get_customer_data_by_id,
     create_new_customer,
@@ -11,7 +11,7 @@ from backend.logic.customers import (
     update_customer_data
 )
 
-from backend.models.customers import Customer
+from models.customers import Customer
 
 router = APIRouter()
 

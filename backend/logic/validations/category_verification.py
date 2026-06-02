@@ -1,4 +1,4 @@
-from backend.models.categories import Category
+from models.categories import Category
 
 
 def is_valid_category(category: Category) -> None:

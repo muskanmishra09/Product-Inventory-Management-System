@@ -1,8 +1,8 @@
-from backend.data_access.sales import get_all_sales, get_sale_by_id, add_sale, delete_sale, update_sale
-from backend.models.sales import Sale
+from data_access.sales import get_all_sales, get_sale_by_id, add_sale, delete_sale, update_sale
+from models.sales import Sale
 from psycopg2.extras import RealDictCursor
-from backend.logic.validations.sale_verification import is_valid_sale
-from backend.logic.validations.id_verification import check_id
+from logic.validations.sale_verification import is_valid_sale
+from logic.validations.id_verification import check_id
 
 
 def get_all_sales_data() -> list[RealDictCursor]:

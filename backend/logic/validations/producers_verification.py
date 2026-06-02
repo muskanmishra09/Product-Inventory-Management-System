@@ -1,4 +1,4 @@
-from backend.models.producers import Producer
+from models.producers import Producer
 
 
 def is_valid_producer(producer: Producer) -> None:
