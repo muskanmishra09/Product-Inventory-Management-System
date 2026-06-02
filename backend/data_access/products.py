@@ -15,7 +15,7 @@ def get_all_products(conn) -> list[RealDictCursor]:
 @query_function
 def get_product_by_id(conn, id: int) -> RealDictCursor:
     cursor = conn.cursor(cursor_factory=RealDictCursor)
-    cursor.execute("SELECT products.id, products.name, products.price, products.stock, categories.name AS category, producers.name AS producer, products.category_id, products.producer_id FROM products LEFT JOIN categories ON products.category_id = categories.id LEFT JOIN producers ON products.producer_id = producers.id WHERE products.id = (%s);", (id,))
+    cursor.execute("SELECT products.id, products.name,products.price, products.stock, categories.name AS category, producers.name AS producer, products.category_id, products.producer_id FROM products LEFT JOIN categories ON products.category_id = categories.id LEFT JOIN producers ON products.producer_id = producers.id WHERE products.id = (%s);", (id,))
     return cursor.fetchone()
 
 
@@ -81,6 +81,7 @@ def update_product(conn, id: int, product: Product) -> None:
     cursor = conn.cursor()
     cursor.execute("""
                    UPDATE products SET name = (%s),
+                
                    price = (%s),
                    stock = (%s),
                    category_id = (%s),
@@ -88,7 +89,7 @@ def update_product(conn, id: int, product: Product) -> None:
                    WHERE id = (%s)
                    RETURNING id
                    """,
-                   (product.name, product.price, product.stock, product.category_id, product.producer_id, id))
+                   (product.name,product.price, product.stock, product.category_id, product.producer_id, id))
     conn.commit()
     
     was_id_updated(cursor)

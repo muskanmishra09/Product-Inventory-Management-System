@@ -17,7 +17,24 @@ def config(filename="database/database.ini", section="postgresql"):
 
 def get_db_connection():
     data = config()
-    conn = psycopg2.connect(**data)
-    return conn
 
+    print("DB CONFIG:", data)
+
+    conn = psycopg2.connect(**data)
+
+    cur = conn.cursor()
+    cur.execute("SELECT current_database();")
+    print("DATABASE:", cur.fetchone())
+
+    cur.execute("SHOW port;")
+    print("PORT:", cur.fetchone())
+
+    cur.execute("""
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema='public'
+    """)
+    print("TABLES:", cur.fetchall())
+
+    return conn
 

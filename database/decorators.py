@@ -3,12 +3,16 @@ from database.connection import get_db_connection
 def query_function(func):
     def decorator(*args, **kwargs):
         conn = get_db_connection()
-        result = None
+
         try:
             result = func(conn, *args, **kwargs)
+            return result
+
         except Exception as e:
-            result = e
+            print("DATABASE ERROR:", e)
+            raise e
+
         finally:
             conn.close()
-        return result
+
     return decorator
