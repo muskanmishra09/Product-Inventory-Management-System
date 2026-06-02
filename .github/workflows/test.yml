@@ -47,6 +47,7 @@ jobs:
         psql postgresql://myuser:mypassword@localhost:5438/mydb -f ./database/init__db.sql
 
     - name: Run tests
+      env: 
+         PYTHONPATH: backend
       run: |
-        export PYTHONPATH=$PYTHONPATH:./backend
         pytest
