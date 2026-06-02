@@ -1,5 +1,5 @@
 from psycopg2.extras import RealDictCursor
-from decorators import query_function
+from database.decorators import query_function
 
 from models.orders import Order
 from data_access.utils.update_check import was_id_updated
