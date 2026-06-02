@@ -1,5 +1,5 @@
 import uvicorn
-from backend.apis.app import app
+from apis.app import app
 from fastapi.middleware.cors import CORSMiddleware
 
 if __name__ == "__main__":
